@@ -1,0 +1,16 @@
+services:
+  introduccion-notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    environment:
+      - TZ=America/Bogota
+
