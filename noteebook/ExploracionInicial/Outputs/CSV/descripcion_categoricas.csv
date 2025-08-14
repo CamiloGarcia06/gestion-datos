@@ -1,0 +1,5 @@
+,SurveyYr,Gender,AgeDecade,Race1,Race3,Education,MaritalStatus,HHIncome,HomeOwn,Work,BMICatUnder20yrs,BMI_WHO,Diabetes,HealthGen,LittleInterest,Depressed,SleepTrouble,PhysActive,TVHrsDay,CompHrsDay,Alcohol12PlusYr,SmokeNow,Smoke100,Smoke100n,Marijuana,RegularMarij,HardDrugs,SexEver,SameSex,SexOrientation
+count,10000,10000,9667,10000,5000,7221,7231,9189,9937,7771,1274,9603,9858,7539,1564,1427,7772,8326,4859,4863,6580,3211,7235,7235,4941,4941,5765,5767,5768,4842
+unique,2,2,8,5,6,5,6,12,3,3,4,4,2,5,2,2,2,2,7,7,2,2,2,2,2,2,2,2,2,3
+top,2009_10,female, 40-49,White,White,SomeCollege,Married,more 99999,Own,Working,b_NormWeight,18.5_to_24.9,No,Good,Several,Several,No,Yes,2_hr,0_to_1_hr,Yes,No,No,Non-Smoker,Yes,No,No,Yes,No,Heterosexual
+freq,5000,5020,1398,6372,3135,2267,3945,2220,6425,4613,805,2911,9098,2956,1130,1009,5799,4649,1275,1409,5212,1745,4024,4024,2892,3575,4700,5544,5353,4638
