@@ -11,7 +11,7 @@ DB_PORT ?= 5432
 LOADER_IMAGE = taller_cobranzas_loader:latest
 NETWORK = $(COMPOSE_PROJECT_NAME)_default
 
-.PHONY: up down restart logs status psql build-loader load shell-loader run-python run-consulta
+.PHONY: up down restart logs status psql build-loader load shell-loader run-python run-consulta run-reportes run-eficiencia
 
 up:
 	$(DOCKER_COMPOSE) up -d
@@ -86,5 +86,25 @@ run-consulta: build-loader
 	  -v $(CURDIR)/run_consulta.py:/app/run_consulta.py \
 	  -v $(CURDIR)/output:/app/output \
 	  $(LOADER_IMAGE) bash -lc "mkdir -p /app/output && python /app/run_consulta.py $(if $(OUTPUT),--output /app/output/consulta.json,) $(ARGS)"
+
+run-reportes: build-loader
+	@$(DOCKER_COMPOSE) up -d > /dev/null
+	docker run --rm --network $(NETWORK) \
+	  -e PGHOST=$(DB_HOST) -e PGPORT=$(DB_PORT) \
+	  -e PGUSER=$(DB_USER) -e PGPASSWORD=$(DB_PASSWORD) -e PGDATABASE=$(DB_NAME) \
+	  -e OUTPUT_DIR=/app/output \
+	  -v $(CURDIR)/reportes.py:/app/reportes.py \
+	  -v $(CURDIR)/output:/app/output \
+	  $(LOADER_IMAGE) bash -lc "mkdir -p /app/output && python /app/reportes.py"
+
+run-eficiencia: build-loader
+	@$(DOCKER_COMPOSE) up -d > /dev/null
+	docker run --rm --network $(NETWORK) \
+	  -e PGHOST=$(DB_HOST) -e PGPORT=$(DB_PORT) \
+	  -e PGUSER=$(DB_USER) -e PGPASSWORD=$(DB_PASSWORD) -e PGDATABASE=$(DB_NAME) \
+	  -e OUTPUT_DIR=/app/output \
+	  -v $(CURDIR)/eficiencia_agencias.py:/app/eficiencia_agencias.py \
+	  -v $(CURDIR)/output:/app/output \
+	  $(LOADER_IMAGE) bash -lc "mkdir -p /app/output && python /app/eficiencia_agencias.py"
 
 

@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='utf-8'?>
+<componentes_por_pais>
+  <pais nombre="Alemania">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="3001" />
+  </pais>
+  <pais nombre="Algeria">
+    <componente nombre="Contrato" frecuencia="11" />
+  </pais>
+  <pais nombre="Angola">
+    <componente nombre="Contrato" frecuencia="1" />
+    <componente nombre="Crédito" frecuencia="1" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1" />
+  </pais>
+  <pais nombre="Antigua y Barbuda">
+    <componente nombre="Obligacion Total" frecuencia="6" />
+  </pais>
+  <pais nombre="Argentina">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="23" />
+  </pais>
+  <pais nombre="Australia">
+    <componente nombre="Crédito" frecuencia="21" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="21" />
+  </pais>
+  <pais nombre="Austria">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="2713" />
+  </pais>
+  <pais nombre="Bahamas">
+    <componente nombre="Obligacion Total" frecuencia="3" />
+  </pais>
+  <pais nombre="Bahrain">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1" />
+    <componente nombre="Saldo Obligación" frecuencia="1" />
+  </pais>
+  <pais nombre="Bangladesh">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="4" />
+    <componente nombre="Saldo Obligación" frecuencia="4" />
+  </pais>
+  <pais nombre="Barbados">
+    <componente nombre="Obligacion Total" frecuencia="18" />
+  </pais>
+  <pais nombre="Bermuda">
+    <componente nombre="Obligacion Total" frecuencia="4" />
+  </pais>
+  <pais nombre="Bolivia">
+    <componente nombre="Factura" frecuencia="2" />
+    <componente nombre="Misceláneo" frecuencia="2" />
+  </pais>
+  <pais nombre="Brasil">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="112" />
+  </pais>
+  <pais nombre="Brunei Darussalam">
+    <componente nombre="Contrato" frecuencia="2" />
+  </pais>
+  <pais nombre="Bulgaria">
+    <componente nombre="Crédito" frecuencia="9" />
+  </pais>
+  <pais nombre="Bélgica">
+    <componente nombre="Factura" frecuencia="6048" />
+  </pais>
+  <pais nombre="Camerún">
+    <componente nombre="Crédito" frecuencia="11" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="11" />
+  </pais>
+  <pais nombre="Canadá">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="39" />
+  </pais>
+  <pais nombre="Cape Verde">
+    <componente nombre="Crédito" frecuencia="1" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1" />
+  </pais>
+  <pais nombre="Catar">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="5" />
+  </pais>
+  <pais nombre="Checa, República">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="105" />
+  </pais>
+  <pais nombre="Chile">
+    <componente nombre="Factura" frecuencia="24" />
+  </pais>
+  <pais nombre="China">
+    <componente nombre="Crédito" frecuencia="17" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="17" />
+  </pais>
+  <pais nombre="Chipre">
+    <componente nombre="Obligacion Total" frecuencia="31" />
+  </pais>
+  <pais nombre="Colombia">
+    <componente nombre="Factura" frecuencia="7361" />
+  </pais>
+  <pais nombre="Congo">
+    <componente nombre="Crédito" frecuencia="26" />
+  </pais>
+  <pais nombre="Congo, República democrática de">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="8" />
+  </pais>
+  <pais nombre="Corea, República de">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="15" />
+  </pais>
+  <pais nombre="Costa Rica">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="21" />
+  </pais>
+  <pais nombre="Croacia">
+    <componente nombre="Factura" frecuencia="2" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="2" />
+  </pais>
+  <pais nombre="Cuba">
+    <componente nombre="Crédito" frecuencia="5" />
+  </pais>
+  <pais nombre="Dinamarca">
+    <componente nombre="Factura" frecuencia="37" />
+  </pais>
+  <pais nombre="Djibuti">
+    <componente nombre="Crédito" frecuencia="1" />
+  </pais>
+  <pais nombre="Dominica">
+    <componente nombre="Obligacion Total" frecuencia="1" />
+  </pais>
+  <pais nombre="Ecuador">
+    <componente nombre="Factura" frecuencia="44" />
+  </pais>
+  <pais nombre="Egipto">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="25" />
+  </pais>
+  <pais nombre="El Salvador">
+    <componente nombre="Factura" frecuencia="35" />
+  </pais>
+  <pais nombre="Emiratos Árabes Unidos">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="52" />
+  </pais>
+  <pais nombre="Eslovakia">
+    <componente nombre="Factura" frecuencia="5" />
+  </pais>
+  <pais nombre="Eslovenia">
+    <componente nombre="Contrato" frecuencia="7" />
+  </pais>
+  <pais nombre="España">
+    <componente nombre="Obligacion Total" frecuencia="483" />
+  </pais>
+  <pais nombre="Estados Unidos">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="732" />
+  </pais>
+  <pais nombre="Estonia">
+    <componente nombre="Factura" frecuencia="4" />
+  </pais>
+  <pais nombre="Filipinas">
+    <componente nombre="Contrato" frecuencia="12" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="12" />
+  </pais>
+  <pais nombre="Finlandia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="69" />
+  </pais>
+  <pais nombre="Francia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="2028" />
+  </pais>
+  <pais nombre="Gabón">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="2" />
+  </pais>
+  <pais nombre="Georgia">
+    <componente nombre="Contrato" frecuencia="1" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1" />
+  </pais>
+  <pais nombre="Ghana">
+    <componente nombre="Factura" frecuencia="7" />
+  </pais>
+  <pais nombre="Granada">
+    <componente nombre="Obligacion Total" frecuencia="7" />
+  </pais>
+  <pais nombre="Grecia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="433" />
+  </pais>
+  <pais nombre="Guadalupe">
+    <componente nombre="Factura" frecuencia="7" />
+  </pais>
+  <pais nombre="Guatemala">
+    <componente nombre="Factura" frecuencia="11" />
+  </pais>
+  <pais nombre="Guinea">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="4" />
+  </pais>
+  <pais nombre="Holanda">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1379" />
+  </pais>
+  <pais nombre="Honduras">
+    <componente nombre="Factura" frecuencia="50" />
+  </pais>
+  <pais nombre="Hong Kong">
+    <componente nombre="Factura" frecuencia="4" />
+  </pais>
+  <pais nombre="Hungría">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="197" />
+  </pais>
+  <pais nombre="India">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="22" />
+  </pais>
+  <pais nombre="Indonesia">
+    <componente nombre="Crédito" frecuencia="12" />
+  </pais>
+  <pais nombre="Iraq">
+    <componente nombre="Contrato" frecuencia="1" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1" />
+  </pais>
+  <pais nombre="Irlanda">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="151" />
+  </pais>
+  <pais nombre="Irán, República Islámica de">
+    <componente nombre="Crédito" frecuencia="4" />
+  </pais>
+  <pais nombre="Islandia">
+    <componente nombre="Tarjeta de Credito" frecuencia="15" />
+  </pais>
+  <pais nombre="Islas Caimán">
+    <componente nombre="Obligacion Total" frecuencia="6" />
+  </pais>
+  <pais nombre="Islas Menores Limítrofes de Estados Unidos">
+    <componente nombre="Abono anterior a Radicación de Cobranza" frecuencia="1" />
+    <componente nombre="Factura" frecuencia="1" />
+    <componente nombre="Misceláneo" frecuencia="1" />
+  </pais>
+  <pais nombre="Islas Vírgenes Británicas">
+    <componente nombre="Crédito" frecuencia="1" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1" />
+  </pais>
+  <pais nombre="Israel">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="51" />
+  </pais>
+  <pais nombre="Italia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1770" />
+  </pais>
+  <pais nombre="Jamaica">
+    <componente nombre="Obligacion Total" frecuencia="27" />
+  </pais>
+  <pais nombre="Japón">
+    <componente nombre="Factura" frecuencia="40" />
+  </pais>
+  <pais nombre="Jordan">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="5" />
+  </pais>
+  <pais nombre="Kenya">
+    <componente nombre="Factura" frecuencia="7" />
+  </pais>
+  <pais nombre="Kuwait">
+    <componente nombre="Factura" frecuencia="10" />
+  </pais>
+  <pais nombre="Latvia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="3" />
+  </pais>
+  <pais nombre="Lituania">
+    <componente nombre="Obligacion Total" frecuencia="2" />
+  </pais>
+  <pais nombre="Luxemburgo">
+    <componente nombre="Tarjeta de Credito" frecuencia="203" />
+  </pais>
+  <pais nombre="Líbano">
+    <componente nombre="Factura" frecuencia="9" />
+  </pais>
+  <pais nombre="Macedonia, Ex-República Yugoslava de">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="15" />
+  </pais>
+  <pais nombre="Malaysia">
+    <componente nombre="Crédito" frecuencia="8" />
+  </pais>
+  <pais nombre="Malta">
+    <componente nombre="Factura" frecuencia="4" />
+  </pais>
+  <pais nombre="MalÃ­">
+    <componente nombre="Abono anterior a Radicación de Cobranza" frecuencia="2" />
+    <componente nombre="Factura" frecuencia="2" />
+    <componente nombre="Misceláneo" frecuencia="2" />
+  </pais>
+  <pais nombre="Marruecos">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="46" />
+  </pais>
+  <pais nombre="Martinica">
+    <componente nombre="Contrato" frecuencia="4" />
+    <componente nombre="Crédito" frecuencia="4" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="4" />
+  </pais>
+  <pais nombre="Mauricio">
+    <componente nombre="Crédito" frecuencia="6" />
+  </pais>
+  <pais nombre="Mauritania">
+    <componente nombre="Contrato" frecuencia="2" />
+  </pais>
+  <pais nombre="Moldova, República de">
+    <componente nombre="Factura" frecuencia="6" />
+  </pais>
+  <pais nombre="Mozambique">
+    <componente nombre="Contrato" frecuencia="1" />
+    <componente nombre="Crédito" frecuencia="1" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1" />
+  </pais>
+  <pais nombre="México">
+    <componente nombre="Factura" frecuencia="28" />
+  </pais>
+  <pais nombre="Mónaco">
+    <componente nombre="Factura" frecuencia="6" />
+  </pais>
+  <pais nombre="Namibia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="10" />
+  </pais>
+  <pais nombre="Nicaragua">
+    <componente nombre="Factura" frecuencia="13" />
+  </pais>
+  <pais nombre="Nigeria">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="5" />
+  </pais>
+  <pais nombre="Noruega">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="112" />
+  </pais>
+  <pais nombre="Nueva Caledonia">
+    <componente nombre="Contrato" frecuencia="3" />
+  </pais>
+  <pais nombre="Nueva Zelanda">
+    <componente nombre="Crédito" frecuencia="20" />
+  </pais>
+  <pais nombre="Omán">
+    <componente nombre="Factura" frecuencia="1" />
+    <componente nombre="Nota Crédito" frecuencia="1" />
+    <componente nombre="Obligacion Total" frecuencia="1" />
+  </pais>
+  <pais nombre="Pakistán">
+    <componente nombre="Crédito" frecuencia="1" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1" />
+  </pais>
+  <pais nombre="Panamá">
+    <componente nombre="Factura" frecuencia="24" />
+  </pais>
+  <pais nombre="Paraguay">
+    <componente nombre="Misceláneo" frecuencia="8" />
+  </pais>
+  <pais nombre="Perú">
+    <componente nombre="Factura" frecuencia="66" />
+  </pais>
+  <pais nombre="Polonia">
+    <componente nombre="Crédito" frecuencia="24" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="24" />
+  </pais>
+  <pais nombre="Portugal">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="149" />
+  </pais>
+  <pais nombre="Puerto Rico">
+    <componente nombre="Factura" frecuencia="16" />
+  </pais>
+  <pais nombre="Reino Unido">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1208" />
+  </pais>
+  <pais nombre="República Dominicana">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="20" />
+  </pais>
+  <pais nombre="Reunión">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="2" />
+  </pais>
+  <pais nombre="Rumania">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="24" />
+  </pais>
+  <pais nombre="Rusa, Federación">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="20" />
+  </pais>
+  <pais nombre="Rwanda">
+    <componente nombre="Crédito" frecuencia="2" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="2" />
+  </pais>
+  <pais nombre="Santa Lucia">
+    <componente nombre="Obligacion Total" frecuencia="7" />
+  </pais>
+  <pais nombre="Saudíta Arabia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="7" />
+  </pais>
+  <pais nombre="Senegal">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="14" />
+  </pais>
+  <pais nombre="Serbia y Montenegro">
+    <componente nombre="Contrato" frecuencia="8" />
+  </pais>
+  <pais nombre="Sierra Leona">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="3" />
+  </pais>
+  <pais nombre="Singapur">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="6" />
+  </pais>
+  <pais nombre="Sirio Arabe, República">
+    <componente nombre="Abono anterior a Radicación de Cobranza" frecuencia="5" />
+  </pais>
+  <pais nombre="Suecia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="176" />
+  </pais>
+  <pais nombre="Suiza">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="1333" />
+  </pais>
+  <pais nombre="Sur Africa">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="127" />
+  </pais>
+  <pais nombre="Tailandia">
+    <componente nombre="Crédito" frecuencia="10" />
+  </pais>
+  <pais nombre="Taiwan, Provincia de China">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="4" />
+  </pais>
+  <pais nombre="Trinidad y Tobago">
+    <componente nombre="Obligacion Total" frecuencia="37" />
+  </pais>
+  <pais nombre="Tunisia">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="48" />
+  </pais>
+  <pais nombre="Turquía">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="115" />
+  </pais>
+  <pais nombre="Ucrania">
+    <componente nombre="Crédito" frecuencia="3" />
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="3" />
+  </pais>
+  <pais nombre="Uganda">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="4" />
+    <componente nombre="Obligacion Total" frecuencia="4" />
+    <componente nombre="Saldo Obligación" frecuencia="4" />
+  </pais>
+  <pais nombre="Uruguay">
+    <componente nombre="Intereses anteriores a Radicación de Cobranza" frecuencia="6" />
+  </pais>
+  <pais nombre="Venezuela">
+    <componente nombre="Factura" frecuencia="110" />
+  </pais>
+</componentes_por_pais>

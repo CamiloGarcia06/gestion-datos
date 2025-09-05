@@ -29,10 +29,7 @@ SELECT
             ORDER BY cp.fecha NULLS LAST, cp.tipo
         ) FILTER (WHERE cp.id IS NOT NULL),
         ARRAY[]::text[]
-        ) AS componentes        
-        
-
-
+        ) AS componentes                
     FROM
         procesos pr
         INNER JOIN datosloc dla ON pr.acreedor = dla.id 
@@ -46,7 +43,6 @@ SELECT
         INNER JOIN componentes cp ON pr.id = cp.proceso
         INNER JOIN tiposcomp tcp ON cp.tipo = tcp.id 
         INNER JOIN divisas dv ON cp.divisa = dv.id
-        
     GROUP BY  
         pr.id, dla.nombre, psa.nombre_es, dld.nombre, psd.nombre_es, erpr.notas_conf, eppr.notas_conf
     ORDER BY pr.id; 

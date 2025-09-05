@@ -1,0 +1,17 @@
+[
+  {
+    "receptor_id": 2,
+    "agencia": "Bank account: Fortis Bank, Swift: GEBABEBB - address:\nGemeenteplein 20, B-3010 Kessel-Lo; \nCollections account: IBAN BE29 2300 3852 3164, \nOther matters account: IBAN BE29 2300 3826 6217",
+    "procesos_cerrados_no_ok": 8511
+  },
+  {
+    "receptor_id": 18,
+    "agencia": "Bank account: Postbank Hannover, Goseriede 16, D-30159\nHannover, Germany - Account (IBAN) no.: DE 79 2501 0030\n0476 1513 05 - BIC (former SWIFT): PBNKDEFF250",
+    "procesos_cerrados_no_ok": 6427
+  },
+  {
+    "receptor_id": 3,
+    "agencia": null,
+    "procesos_cerrados_no_ok": 1978
+  }
+]

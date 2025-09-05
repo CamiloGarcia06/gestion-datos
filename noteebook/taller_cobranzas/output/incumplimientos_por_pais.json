@@ -1,0 +1,262 @@
+[
+  {
+    "pais_deudor": "Colombia",
+    "num_deudores": 421,
+    "monto_total": "8450399668.830000"
+  },
+  {
+    "pais_deudor": "Alemania",
+    "num_deudores": 386,
+    "monto_total": "2686543.630000"
+  },
+  {
+    "pais_deudor": "Bélgica",
+    "num_deudores": 304,
+    "monto_total": "7876992.660000"
+  },
+  {
+    "pais_deudor": "Francia",
+    "num_deudores": 104,
+    "monto_total": "3642255.980000"
+  },
+  {
+    "pais_deudor": "Holanda",
+    "num_deudores": 46,
+    "monto_total": "353649.520000"
+  },
+  {
+    "pais_deudor": "España",
+    "num_deudores": 22,
+    "monto_total": "1809008.800000"
+  },
+  {
+    "pais_deudor": "Estados Unidos",
+    "num_deudores": 16,
+    "monto_total": "527286.160000"
+  },
+  {
+    "pais_deudor": "Italia",
+    "num_deudores": 14,
+    "monto_total": "105434.250000"
+  },
+  {
+    "pais_deudor": "Reino Unido",
+    "num_deudores": 12,
+    "monto_total": "72664.980000"
+  },
+  {
+    "pais_deudor": "Suiza",
+    "num_deudores": 11,
+    "monto_total": "541900.330000"
+  },
+  {
+    "pais_deudor": "Suecia",
+    "num_deudores": 11,
+    "monto_total": "293742.590000"
+  },
+  {
+    "pais_deudor": "Venezuela",
+    "num_deudores": 11,
+    "monto_total": "281599.290000"
+  },
+  {
+    "pais_deudor": "Perú",
+    "num_deudores": 10,
+    "monto_total": "766199.680000"
+  },
+  {
+    "pais_deudor": "Jamaica",
+    "num_deudores": 9,
+    "monto_total": "221880.110000"
+  },
+  {
+    "pais_deudor": "Ecuador",
+    "num_deudores": 8,
+    "monto_total": "458632.600000"
+  },
+  {
+    "pais_deudor": "Luxemburgo",
+    "num_deudores": 8,
+    "monto_total": "135277.510000"
+  },
+  {
+    "pais_deudor": "Grecia",
+    "num_deudores": 6,
+    "monto_total": "262492.580000"
+  },
+  {
+    "pais_deudor": "Portugal",
+    "num_deudores": 5,
+    "monto_total": "161525.100000"
+  },
+  {
+    "pais_deudor": "Panamá",
+    "num_deudores": 5,
+    "monto_total": "95880.020000"
+  },
+  {
+    "pais_deudor": "Irlanda",
+    "num_deudores": 5,
+    "monto_total": "33210.240000"
+  },
+  {
+    "pais_deudor": "Austria",
+    "num_deudores": 5,
+    "monto_total": "15823.990000"
+  },
+  {
+    "pais_deudor": "Guatemala",
+    "num_deudores": 4,
+    "monto_total": "369362.430000"
+  },
+  {
+    "pais_deudor": "Noruega",
+    "num_deudores": 4,
+    "monto_total": "250521.970000"
+  },
+  {
+    "pais_deudor": "Chile",
+    "num_deudores": 4,
+    "monto_total": "192799.200000"
+  },
+  {
+    "pais_deudor": "Nicaragua",
+    "num_deudores": 4,
+    "monto_total": "91016.370000"
+  },
+  {
+    "pais_deudor": "Trinidad y Tobago",
+    "num_deudores": 4,
+    "monto_total": "14087.330000"
+  },
+  {
+    "pais_deudor": "Finlandia",
+    "num_deudores": 3,
+    "monto_total": "141452.930000"
+  },
+  {
+    "pais_deudor": "Dinamarca",
+    "num_deudores": 3,
+    "monto_total": "140406.080000"
+  },
+  {
+    "pais_deudor": "Honduras",
+    "num_deudores": 3,
+    "monto_total": "64205.590000"
+  },
+  {
+    "pais_deudor": "El Salvador",
+    "num_deudores": 3,
+    "monto_total": "44679.500000"
+  },
+  {
+    "pais_deudor": "Puerto Rico",
+    "num_deudores": 3,
+    "monto_total": "28901.550000"
+  },
+  {
+    "pais_deudor": "Sur Africa",
+    "num_deudores": 3,
+    "monto_total": "22855.910000"
+  },
+  {
+    "pais_deudor": "Costa Rica",
+    "num_deudores": 2,
+    "monto_total": "249797.320000"
+  },
+  {
+    "pais_deudor": "Canadá",
+    "num_deudores": 2,
+    "monto_total": "205535.110000"
+  },
+  {
+    "pais_deudor": "México",
+    "num_deudores": 2,
+    "monto_total": "138509.800000"
+  },
+  {
+    "pais_deudor": "Turquía",
+    "num_deudores": 2,
+    "monto_total": "34855.620000"
+  },
+  {
+    "pais_deudor": "República Dominicana",
+    "num_deudores": 2,
+    "monto_total": "25937.050000"
+  },
+  {
+    "pais_deudor": "India",
+    "num_deudores": 1,
+    "monto_total": "560524.410000"
+  },
+  {
+    "pais_deudor": "Brasil",
+    "num_deudores": 1,
+    "monto_total": "435215.600000"
+  },
+  {
+    "pais_deudor": "Paraguay",
+    "num_deudores": 1,
+    "monto_total": "95007.590000"
+  },
+  {
+    "pais_deudor": "Israel",
+    "num_deudores": 1,
+    "monto_total": "61318.910000"
+  },
+  {
+    "pais_deudor": "Eslovenia",
+    "num_deudores": 1,
+    "monto_total": "41044.120000"
+  },
+  {
+    "pais_deudor": "Hungría",
+    "num_deudores": 1,
+    "monto_total": "30956.390000"
+  },
+  {
+    "pais_deudor": "Checa, República",
+    "num_deudores": 1,
+    "monto_total": "29569.370000"
+  },
+  {
+    "pais_deudor": "Islas Menores Limítrofes de Estados Unidos",
+    "num_deudores": 1,
+    "monto_total": "19092.070000"
+  },
+  {
+    "pais_deudor": "Kuwait",
+    "num_deudores": 1,
+    "monto_total": "13236.120000"
+  },
+  {
+    "pais_deudor": "Bolivia",
+    "num_deudores": 1,
+    "monto_total": "8623.250000"
+  },
+  {
+    "pais_deudor": "Rusa, Federación",
+    "num_deudores": 1,
+    "monto_total": "8580.350000"
+  },
+  {
+    "pais_deudor": "Polonia",
+    "num_deudores": 1,
+    "monto_total": "3543.930000"
+  },
+  {
+    "pais_deudor": "Estonia",
+    "num_deudores": 1,
+    "monto_total": "2564.750000"
+  },
+  {
+    "pais_deudor": "Santa Lucia",
+    "num_deudores": 1,
+    "monto_total": "2547.170000"
+  },
+  {
+    "pais_deudor": "Islandia",
+    "num_deudores": 1,
+    "monto_total": "2000.000000"
+  }
+]
