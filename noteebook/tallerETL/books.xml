@@ -1,0 +1,98 @@
+<books>
+  <book>
+    <id>bk101</id>
+    <title>XML Developer's Guide</title>
+    <author>Gambardella, Matthew</author>
+    <genre>Computer</genre>
+    <price>44.95</price>
+    <publish_date>2000-10-01</publish_date>
+    </book>
+  <book>
+    <id>bk102</id>
+    <title>Midnight Rain</title>
+    <author>Ralls, Kim</author>
+    <genre>Fantasy</genre>
+    <price>5.95</price>
+    <publish_date>2000-12-16</publish_date>
+    </book>
+  <book>
+    <id>bk103</id>
+    <title>Maeve Ascendant</title>
+    <author>Corets, Eva</author>
+    <genre>Fantasy</genre>
+    <price>5.95</price>
+    <publish_date>2000-11-17</publish_date>
+    </book>
+  <book>
+    <id>bk104</id>
+    <title>Oberon's Legacy</title>
+    <author>Corets, Eva</author>
+    <genre>Fantasy</genre>
+    <price>5.95</price>
+    <publish_date>2001-03-10</publish_date>
+    </book>
+  <book>
+    <id>bk105</id>
+    <title>The Sundered Grail</title>
+    <author>Corets, Eva</author>
+    <genre>Fantasy</genre>
+    <price>5.95</price>
+    <publish_date>2001-09-10</publish_date>
+    </book>
+  <book>
+    <id>bk106</id>
+    <title>Lover Birds</title>
+    <author>Randall, Cynthia</author>
+    <genre>Romance</genre>
+    <price>4.95</price>
+    <publish_date>2000-09-02</publish_date>
+    </book>
+  <book>
+    <id>bk107</id>
+    <title>Splish Splash</title>
+    <author>Thurman, Paula</author>
+    <genre>Romance</genre>
+    <price>4.95</price>
+    <publish_date>2000-11-02</publish_date>
+    </book>
+  <book>
+    <id>bk108</id>
+    <title>Creepy Crawlies</title>
+    <author>Knorr, Stefan</author>
+    <genre>Horror</genre>
+    <price>4.95</price>
+    <publish_date>2000-12-06</publish_date>
+    </book>
+  <book>
+    <id>bk109</id>
+    <title>Paradox Lost</title>
+    <author>Kress, Peter</author>
+    <genre>Science Fiction</genre>
+    <price>6.95</price>
+    <publish_date>2000-11-02</publish_date>
+    </book>
+  <book>
+    <id>bk110</id>
+    <title>Microsoft .NET: The Programming Bible</title>
+    <author>O'Brien, Tim</author>
+    <genre>Computer</genre>
+    <price>36.95</price>
+    <publish_date>2000-12-09</publish_date>
+    </book>
+  <book>
+    <id>bk111</id>
+    <title>MSXML3: A Comprehensive Guide</title>
+    <author>O'Brien, Tim</author>
+    <genre>Computer</genre>
+    <price>36.95</price>
+    <publish_date>2000-12-01</publish_date>
+    </book>
+  <book>
+    <id>bk112</id>
+    <title>Visual Studio 7: A Comprehensive Guide</title>
+    <author>Galos, Mike</author>
+    <genre>Computer</genre>
+    <price>49.95</price>
+    <publish_date>2001-04-16</publish_date>
+    </book>
+  </books>

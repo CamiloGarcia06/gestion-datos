@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "bk101",
+    "Título": "XML Developer's Guide",
+    "Autor": "Gambardella, Matthew",
+    "Género": "Computer",
+    "Precio": "44.95",
+    "Fecha de publicación": "2000-10-01"
+  },
+  {
+    "Id": "bk102",
+    "Título": "Midnight Rain",
+    "Autor": "Ralls, Kim",
+    "Género": "Fantasy",
+    "Precio": "5.95",
+    "Fecha de publicación": "2000-12-16"
+  },
+  {
+    "Id": "bk103",
+    "Título": "Maeve Ascendant",
+    "Autor": "Corets, Eva",
+    "Género": "Fantasy",
+    "Precio": "5.95",
+    "Fecha de publicación": "2000-11-17"
+  },
+  {
+    "Id": "bk104",
+    "Título": "Oberon's Legacy",
+    "Autor": "Corets, Eva",
+    "Género": "Fantasy",
+    "Precio": "5.95",
+    "Fecha de publicación": "2001-03-10"
+  },
+  {
+    "Id": "bk105",
+    "Título": "The Sundered Grail",
+    "Autor": "Corets, Eva",
+    "Género": "Fantasy",
+    "Precio": "5.95",
+    "Fecha de publicación": "2001-09-10"
+  },
+  {
+    "Id": "bk106",
+    "Título": "Lover Birds",
+    "Autor": "Randall, Cynthia",
+    "Género": "Romance",
+    "Precio": "4.95",
+    "Fecha de publicación": "2000-09-02"
+  },
+  {
+    "Id": "bk107",
+    "Título": "Splish Splash",
+    "Autor": "Thurman, Paula",
+    "Género": "Romance",
+    "Precio": "4.95",
+    "Fecha de publicación": "2000-11-02"
+  },
+  {
+    "Id": "bk108",
+    "Título": "Creepy Crawlies",
+    "Autor": "Knorr, Stefan",
+    "Género": "Horror",
+    "Precio": "4.95",
+    "Fecha de publicación": "2000-12-06"
+  },
+  {
+    "Id": "bk109",
+    "Título": "Paradox Lost",
+    "Autor": "Kress, Peter",
+    "Género": "Science Fiction",
+    "Precio": "6.95",
+    "Fecha de publicación": "2000-11-02"
+  },
+  {
+    "Id": "bk110",
+    "Título": "Microsoft .NET: The Programming Bible",
+    "Autor": "O'Brien, Tim",
+    "Género": "Computer",
+    "Precio": "36.95",
+    "Fecha de publicación": "2000-12-09"
+  },
+  {
+    "Id": "bk111",
+    "Título": "MSXML3: A Comprehensive Guide",
+    "Autor": "O'Brien, Tim",
+    "Género": "Computer",
+    "Precio": "36.95",
+    "Fecha de publicación": "2000-12-01"
+  },
+  {
+    "Id": "bk112",
+    "Título": "Visual Studio 7: A Comprehensive Guide",
+    "Autor": "Galos, Mike",
+    "Género": "Computer",
+    "Precio": "49.95",
+    "Fecha de publicación": "2001-04-16"
+  }
+]

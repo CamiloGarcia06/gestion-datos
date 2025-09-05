@@ -1,6 +1,7 @@
 import json
 import os
 import psycopg2
+from psycopg2.extras import RealDictCursor
 from psycopg2.extensions import connection as PGConnection
 
 
@@ -15,98 +16,110 @@ def open_connection() -> PGConnection:
     return conn
 
 
-def dump_json(path: str, rows, headers):
-    data = []
-    for row in rows:
-        obj = {}
-        for idx, col in enumerate(headers):
-            val = row[idx]
-            obj[col] = val if isinstance(val, (str, int, float, bool, list, dict)) or val is None else str(val)
-        data.append(obj)
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-
-def fetch(conn: PGConnection, query: str, params=None):
-    with conn.cursor() as cur:
-        cur.execute(query, params or [])
-        rows = cur.fetchall()
-        headers = [d[0] for d in cur.description]
-    return rows, headers
-
-
 def main() -> int:
     out_dir = os.environ.get("OUTPUT_DIR", "/app/output")
+    out_path = os.path.join(out_dir, "eficiencia_agencias.txt")
+    os.makedirs(out_dir, exist_ok=True)
+
+    sql = """
+    WITH cierre_ok AS (
+      SELECT pr.id AS proceso_id,
+             pr.receptor,
+             COALESCE(pr.fecradicac, pr.fechainic) AS fecha_inicio,
+             MIN(b.fecha) AS fecha_cierre
+      FROM procesos pr
+      JOIN bitacora b ON b.proceso = pr.id
+      JOIN estados es ON es.id = b.estado
+      WHERE es.nombre_es = 'Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.'
+      GROUP BY pr.id, pr.receptor
+    ),
+    promedio AS (
+      SELECT ep.id AS receptor_id,
+             ep.notas_conf AS agencia,
+             AVG((c.fecha_cierre - c.fecha_inicio))::numeric AS dias_promedio,
+             COUNT(*) AS procesos_cerrados
+      FROM cierre_ok c
+      JOIN empresas ep ON ep.id = c.receptor
+      WHERE c.fecha_inicio IS NOT NULL AND c.fecha_cierre IS NOT NULL
+      GROUP BY ep.id, ep.notas_conf
+      ORDER BY dias_promedio ASC NULLS LAST, procesos_cerrados DESC
+    ),
+    top_ok AS (
+      SELECT ep.id AS receptor_id, ep.notas_conf AS agencia, COUNT(*) AS procesos_cerrados_ok
+      FROM procesos pr
+      JOIN empresas ep ON ep.id = pr.receptor
+      WHERE EXISTS (
+        SELECT 1 FROM bitacora b JOIN estados es ON es.id=b.estado
+        WHERE b.proceso = pr.id AND es.nombre_es = 'Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.'
+      )
+      GROUP BY ep.id, ep.notas_conf
+      ORDER BY procesos_cerrados_ok DESC, agencia ASC
+      LIMIT 10
+    ),
+    top_no_ok AS (
+      SELECT ep.id AS receptor_id, ep.notas_conf AS agencia, COUNT(*) AS procesos_cerrados_no_ok
+      FROM procesos pr
+      JOIN empresas ep ON ep.id = pr.receptor
+      WHERE pr.cerrado = TRUE
+        AND NOT EXISTS (
+          SELECT 1 FROM bitacora b JOIN estados es ON es.id=b.estado
+          WHERE b.proceso = pr.id AND es.nombre_es = 'Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.'
+        )
+      GROUP BY ep.id, ep.notas_conf
+      ORDER BY procesos_cerrados_no_ok DESC, agencia ASC
+      LIMIT 10
+    )
+    SELECT (
+      'Cuánto es el tiempo promedio que demoran los receptores en cerrar los procesos (de menor a mayor, más rápidas primero):' || E'\n' ||
+      COALESCE(
+        (
+          SELECT string_agg(
+                   format('%s: %s días (procesos %s)',
+                          COALESCE(agencia, '(sin nombre)'),
+                          trim(to_char(dias_promedio, 'FM999999999.99')),
+                          procesos_cerrados
+                   ), E'\n'
+                 )
+          FROM promedio
+        ), '(sin datos)'
+      )
+    ) || E'\n\n' || (
+      'Top 10 de las agencias que han cerrado la mayor cantidad de procesos con el estado “Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.”:' || E'\n' ||
+      COALESCE(
+        (
+          SELECT string_agg(
+                   format('%s) %s: %s procesos', rn, COALESCE(agencia, '(sin nombre)'), procesos_cerrados_ok), E'\n')
+          FROM (
+            SELECT row_number() over (ORDER BY procesos_cerrados_ok DESC, agencia ASC) AS rn,
+                   agencia, procesos_cerrados_ok
+            FROM top_ok
+          ) t
+        ), '(sin datos)'
+      )
+    ) || E'\n\n' || (
+      'Top 10 de las agencias que han cerrado la mayor cantidad de procesos con estados diferentes a “Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.”:' || E'\n' ||
+      COALESCE(
+        (
+          SELECT string_agg(
+                   format('%s) %s: %s procesos', rn, COALESCE(agencia, '(sin nombre)'), procesos_cerrados_no_ok), E'\n')
+          FROM (
+            SELECT row_number() over (ORDER BY procesos_cerrados_no_ok DESC, agencia ASC) AS rn,
+                   agencia, procesos_cerrados_no_ok
+            FROM top_no_ok
+          ) t
+        ), '(sin datos)'
+      )
+    ) AS informe;
+    """
+
     conn = open_connection()
     try:
-        # 1) Tiempo promedio en cerrar procesos por receptor (agencia receptora)
-        q_promedio = """
-        WITH cierre AS (
-          SELECT pr.id AS proceso_id,
-                 pr.receptor,
-                 COALESCE(pr.fecradicac, pr.fechainic) AS fecha_inicio,
-                 MIN(b.fecha) AS fecha_cierre
-          FROM procesos pr
-          JOIN bitacora b ON b.proceso = pr.id
-          JOIN estados es ON es.id = b.estado
-          WHERE es.nombre_es = 'Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.'
-          GROUP BY pr.id, pr.receptor
-        )
-        SELECT ep.id AS receptor_id,
-               ep.notas_conf AS agencia,
-               AVG((cierre.fecha_cierre - cierre.fecha_inicio))::numeric AS dias_promedio,
-               COUNT(*) AS procesos_cerrados
-        FROM cierre
-        JOIN empresas ep ON ep.id = cierre.receptor
-        WHERE cierre.fecha_inicio IS NOT NULL AND cierre.fecha_cierre IS NOT NULL
-        GROUP BY ep.id, ep.notas_conf
-        ORDER BY dias_promedio ASC NULLS LAST, procesos_cerrados DESC;
-        """
-        rows1, headers1 = fetch(conn, q_promedio)
-        dump_json(os.path.join(out_dir, "agencias_tiempo_promedio_cierre.json"), rows1, headers1)
-
-        # 2) Top 10 agencias con más cierres en estado exacto CANCELADA TOTALIDAD
-        q_top_ok = """
-        WITH cierre_ok AS (
-          SELECT pr.receptor, pr.id
-          FROM procesos pr
-          WHERE EXISTS (
-            SELECT 1 FROM bitacora b JOIN estados es ON es.id=b.estado
-            WHERE b.proceso = pr.id AND es.nombre_es = 'Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.'
-          )
-        )
-        SELECT ep.id AS receptor_id, ep.notas_conf AS agencia, COUNT(*) AS procesos_cerrados_ok
-        FROM cierre_ok c
-        JOIN empresas ep ON ep.id = c.receptor
-        GROUP BY ep.id, ep.notas_conf
-        ORDER BY procesos_cerrados_ok DESC, agencia ASC
-        LIMIT 10;
-        """
-        rows2, headers2 = fetch(conn, q_top_ok)
-        dump_json(os.path.join(out_dir, "top10_agencias_cerrados_ok.json"), rows2, headers2)
-
-        # 3) Top 10 agencias con más cierres en estados diferentes a CANCELADA TOTALIDAD
-        q_top_not_ok = """
-        WITH cierre_not_ok AS (
-          SELECT pr.receptor, pr.id
-          FROM procesos pr
-          WHERE pr.cerrado = TRUE
-            AND NOT EXISTS (
-              SELECT 1 FROM bitacora b JOIN estados es ON es.id=b.estado
-              WHERE b.proceso = pr.id AND es.nombre_es = 'Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.'
-            )
-        )
-        SELECT ep.id AS receptor_id, ep.notas_conf AS agencia, COUNT(*) AS procesos_cerrados_no_ok
-        FROM cierre_not_ok c
-        JOIN empresas ep ON ep.id = c.receptor
-        GROUP BY ep.id, ep.notas_conf
-        ORDER BY procesos_cerrados_no_ok DESC, agencia ASC
-        LIMIT 10;
-        """
-        rows3, headers3 = fetch(conn, q_top_not_ok)
-        dump_json(os.path.join(out_dir, "top10_agencias_cerrados_no_ok.json"), rows3, headers3)
-
+        with conn.cursor() as cur:
+            cur.execute(sql)
+            row = cur.fetchone()
+            informe = row[0] if row and row[0] is not None else ''
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(informe)
     finally:
         conn.close()
     return 0
@@ -114,3 +127,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

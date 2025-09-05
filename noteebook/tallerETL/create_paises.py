@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-Crear un dataset de países europeos y exportarlo a CSV, JSON y XML (legibles).
+Crear un dataset de países europeos y exportarlo a CSV, JSON y XML
+en versiones legibles e igualmente compactas (minificadas).
 
 Salidas (junto a este script):
   - paises.csv (con encabezado)
+  - paises.min.csv (sin encabezado)
   - paises.json (indentado)
+  - paises.min.json (compacto)
   - paises.xml (indentado)
+  - paises.min.xml (compacto)
 """
 from __future__ import annotations
 
@@ -16,8 +20,7 @@ from typing import Any, Dict, List
 import xml.etree.ElementTree as ET
 
 
-WORKSPACE_DIR = Path("/home/camilo-arch/gestion-datos")
-SCRIPT_DIR = WORKSPACE_DIR / "noteebook" / "taller2"
+SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 def build_dataset() -> List[Dict[str, Any]]:
@@ -56,6 +59,17 @@ def write_csv_readable(rows: List[Dict[str, Any]], dest: Path) -> None:
 def write_json_readable(rows: List[Dict[str, Any]], dest: Path) -> None:
     with dest.open("w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=2)
+
+def write_csv_compact(rows: List[Dict[str, Any]], dest: Path) -> None:
+    headers = ["Nombre", "Nombre_es", "Nombre_de", "Capital", "Población"]
+    with dest.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        for row in rows:
+            writer.writerow([row.get(h, "") for h in headers])
+
+def write_json_compact(rows: List[Dict[str, Any]], dest: Path) -> None:
+    with dest.open("w", encoding="utf-8") as f:
+        json.dump(rows, f, ensure_ascii=False, separators=(",", ":"))
 
 def dict_to_xml_element(tag: str, mapping: Dict[str, Any]) -> ET.Element:
     elem = ET.Element(tag)
@@ -97,6 +111,12 @@ def write_xml_readable(rows: List[Dict[str, Any]], dest: Path) -> None:
     with dest.open("w", encoding="utf-8") as f:
         f.write(xml_string)
 
+def write_xml_compact(rows: List[Dict[str, Any]], dest: Path) -> None:
+    root = build_xml_tree(rows)
+    xml_string = ET.tostring(root, encoding="unicode")
+    with dest.open("w", encoding="utf-8") as f:
+        f.write(xml_string)
+
 
 def main() -> None:
     SCRIPT_DIR.mkdir(parents=True, exist_ok=True)
@@ -104,18 +124,24 @@ def main() -> None:
 
     # CSV
     write_csv_readable(rows, SCRIPT_DIR / "paises.csv")
+    write_csv_compact(rows, SCRIPT_DIR / "paises.min.csv")
 
     # JSON
     write_json_readable(rows, SCRIPT_DIR / "paises.json")
+    write_json_compact(rows, SCRIPT_DIR / "paises.min.json")
 
     # XML
     write_xml_readable(rows, SCRIPT_DIR / "paises.xml")
+    write_xml_compact(rows, SCRIPT_DIR / "paises.min.xml")
 
     print(
         "Escritura completada:\n"
         f" - {SCRIPT_DIR / 'paises.csv'}\n"
+        f" - {SCRIPT_DIR / 'paises.min.csv'}\n"
         f" - {SCRIPT_DIR / 'paises.json'}\n"
+        f" - {SCRIPT_DIR / 'paises.min.json'}\n"
         f" - {SCRIPT_DIR / 'paises.xml'}\n"
+        f" - {SCRIPT_DIR / 'paises.min.xml'}\n"
     )
 
 

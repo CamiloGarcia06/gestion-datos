@@ -7,8 +7,11 @@ Input:
 
 Outputs (written beside this script):
   - users.csv
+  - users.min.csv (compact, without header)
   - users.json (nested with selected fields only: id, name, username, email, phone, website, address{...}, company{...})
+  - users.min.json (compact)
   - users.xml (nested structure)
+  - users.min.xml (compact)
 """
 from __future__ import annotations
 
@@ -20,13 +23,15 @@ from typing import Any, Dict, Iterable, List
 import xml.etree.ElementTree as ET
 
 
-WORKSPACE_DIR = Path("/home/camilo-arch/gestion-datos")
-SCRIPT_DIR = WORKSPACE_DIR / "noteebook" / "taller2"
+SCRIPT_DIR = Path(__file__).resolve().parent
 SOURCE_JSON = SCRIPT_DIR / "data" / "users.json"
 
 DEST_CSV = SCRIPT_DIR / "users.csv"
+DEST_CSV_MIN = SCRIPT_DIR / "users.min.csv"
 DEST_JSON = SCRIPT_DIR / "users.json"
+DEST_JSON_MIN = SCRIPT_DIR / "users.min.json"
 DEST_XML = SCRIPT_DIR / "users.xml"
+DEST_XML_MIN = SCRIPT_DIR / "users.min.xml"
 
 
 def load_users(path: Path) -> List[Dict[str, Any]]:
@@ -123,6 +128,14 @@ def write_csv(records: List[Dict[str, Any]], dest_path: Path) -> None:
         for rec in records:
             writer.writerow(rec)
 
+def write_csv_compact(records: List[Dict[str, Any]], dest_path: Path) -> None:
+    # Compacto sin encabezado, columnas ordenadas por nombre
+    header_keys: List[str] = sorted({key for rec in records for key in rec.keys()})
+    with dest_path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        for rec in records:
+            writer.writerow([rec.get(k, "") for k in header_keys])
+
 
 def dict_to_xml_element(tag: str, value: Any) -> ET.Element:
     """Convert a Python value to an XML element with the given tag.
@@ -176,6 +189,9 @@ def pretty_print_xml(element: ET.Element) -> str:
     indent(element)
     return ET.tostring(element, encoding="unicode")
 
+def xml_compact(element: ET.Element) -> str:
+    return ET.tostring(element, encoding="unicode")
+
 
 def main() -> None:
     os.makedirs(SCRIPT_DIR, exist_ok=True)
@@ -186,11 +202,14 @@ def main() -> None:
 
     # CSV
     write_csv(flattened_users, DEST_CSV)
+    write_csv_compact(flattened_users, DEST_CSV_MIN)
 
     # JSON (nested with only requested fields)
     selected_users = [select_user_fields(u) for u in users]
     with DEST_JSON.open("w", encoding="utf-8") as jf:
         json.dump(selected_users, jf, ensure_ascii=False, indent=2)
+    with DEST_JSON_MIN.open("w", encoding="utf-8") as jf:
+        json.dump(selected_users, jf, ensure_ascii=False, separators=(",", ":"))
 
     # XML (nested structure akin to original per-user dict)
     tree = users_to_xml(users)
@@ -198,9 +217,21 @@ def main() -> None:
     xml_string = pretty_print_xml(tree.getroot())
     with DEST_XML.open("w", encoding="utf-8") as xf:
         xf.write(xml_string)
+    with DEST_XML_MIN.open("w", encoding="utf-8") as xf:
+        xf.write(xml_compact(tree.getroot()))
 
-    print(f"Escritura completada:\n - {DEST_CSV}\n - {DEST_JSON}\n - {DEST_XML}")
+    print(
+        f"Escritura completada:\n"
+        f" - {DEST_CSV}\n"
+        f" - {DEST_CSV_MIN}\n"
+        f" - {DEST_JSON}\n"
+        f" - {DEST_JSON_MIN}\n"
+        f" - {DEST_XML}\n"
+        f" - {DEST_XML_MIN}\n"
+    )
 
 
 if __name__ == "__main__":
     main()
+
+

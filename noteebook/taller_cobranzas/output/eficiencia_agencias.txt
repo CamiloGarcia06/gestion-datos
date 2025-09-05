@@ -1,0 +1,31 @@
+Cuánto es el tiempo promedio que demoran los receptores en cerrar los procesos (de menor a mayor, más rápidas primero):
+: 42. días (procesos 1)
+(sin nombre): 158.46 días (procesos 404)
+Bank account: Fortis Bank, Swift: GEBABEBB - address:
+Gemeenteplein 20, B-3010 Kessel-Lo; 
+Collections account: IBAN BE29 2300 3852 3164, 
+Other matters account: IBAN BE29 2300 3826 6217: 178.38 días (procesos 1498)
+Bank account: Postbank Hannover, Goseriede 16, D-30159
+Hannover, Germany - Account (IBAN) no.: DE 79 2501 0030
+0476 1513 05 - BIC (former SWIFT): PBNKDEFF250: 261.17 días (procesos 469)
+
+Top 10 de las agencias que han cerrado la mayor cantidad de procesos con el estado “Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.”:
+1) Bank account: Fortis Bank, Swift: GEBABEBB - address:
+Gemeenteplein 20, B-3010 Kessel-Lo; 
+Collections account: IBAN BE29 2300 3852 3164, 
+Other matters account: IBAN BE29 2300 3826 6217: 1498 procesos
+2) Bank account: Postbank Hannover, Goseriede 16, D-30159
+Hannover, Germany - Account (IBAN) no.: DE 79 2501 0030
+0476 1513 05 - BIC (former SWIFT): PBNKDEFF250: 469 procesos
+3) (sin nombre): 404 procesos
+4) : 1 procesos
+
+Top 10 de las agencias que han cerrado la mayor cantidad de procesos con estados diferentes a “Cerrado. OBLIGACION CANCELADA en su TOTALIDAD.”:
+1) Bank account: Fortis Bank, Swift: GEBABEBB - address:
+Gemeenteplein 20, B-3010 Kessel-Lo; 
+Collections account: IBAN BE29 2300 3852 3164, 
+Other matters account: IBAN BE29 2300 3826 6217: 8511 procesos
+2) Bank account: Postbank Hannover, Goseriede 16, D-30159
+Hannover, Germany - Account (IBAN) no.: DE 79 2501 0030
+0476 1513 05 - BIC (former SWIFT): PBNKDEFF250: 6427 procesos
+3) (sin nombre): 1978 procesos
